@@ -6,22 +6,16 @@
 
 * [File System](linux/file-system.md)
 
-## Infrastructure
-
-* [Cluster](infrastructure/cluster.md)
-* [Kubernetes](infrastructure/kubernetes.md)
-
-## Database
-
-* [PostgreSQL](database/postgresql.md)
-
 ## Development
 
+* [Infrastructure](development/infrastructure/README.md)
+  * [Cluster](development/infrastructure/cluster.md)
+  * [Kubernetes](development/infrastructure/kubernetes.md)
+* [Database](development/database/README.md)
+  * [PostgreSQL](development/database/postgresql.md)
 * [Common](development/common.md)
-* [Security](development/basics.md)
+* [Java](development/java/README.md)
+  * [VM](development/java/vm.md)
 * [ML](development/ml.md)
-
-## Java
-
-* [VM](java/vm.md)
+* [Security](development/basics.md)
 
