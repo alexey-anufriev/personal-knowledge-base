@@ -1,4 +1,4 @@
-# Basics
+# Security
 
 ## How to calculate Password Entropy
 

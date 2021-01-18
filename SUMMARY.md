@@ -18,11 +18,8 @@
 ## Development
 
 * [Common](development/common.md)
+* [Security](development/basics.md)
 * [ML](development/ml.md)
-
-## Security
-
-* [Basics](security/basics.md)
 
 ## Java
 
