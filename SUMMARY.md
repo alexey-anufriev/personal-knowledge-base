@@ -16,6 +16,7 @@
   * [Kubernetes](development/infrastructure/kubernetes.md)
 * [Java](development/java/README.md)
   * [VM](development/java/vm.md)
+  * [Spring](development/java/spring.md)
 * [ML](development/ml.md)
 * [Security](development/basics.md)
 
