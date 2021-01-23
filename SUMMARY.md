@@ -15,8 +15,9 @@
   * [Cluster](development/infrastructure/cluster.md)
   * [Kubernetes](development/infrastructure/kubernetes.md)
 * [Java](development/java/README.md)
-  * [VM](development/java/vm.md)
+  * [Common](development/java/common.md)
   * [Spring](development/java/spring.md)
+  * [VM](development/java/vm.md)
 * [ML](development/ml.md)
 * [Security](development/basics.md)
 
