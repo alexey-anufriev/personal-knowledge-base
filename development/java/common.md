@@ -16,3 +16,7 @@ Integer intVal = intType.cast(objVal);
 
 `Array.getLength(sourceArray)` to get the length of the array \(if represented with an `Object`\).
 
+## Is Object Array?
+
+`object.getClass().isArray()` tells if the object is an array.
+
