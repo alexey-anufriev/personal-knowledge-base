@@ -36,3 +36,25 @@ do {
 System.out.println(val); // x
 ```
 
+## Call to Default Interface Method
+
+```text
+interface A {
+    default void m() {
+        // some logic
+    }
+}
+
+interface B {
+    default void m() {
+        // some logic
+    }
+}
+
+class C implements A, B {
+    public void m() {
+        A.super.m(); // call to a default method
+    }
+}
+```
+
