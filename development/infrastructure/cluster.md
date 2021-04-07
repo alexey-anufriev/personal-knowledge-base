@@ -8,5 +8,7 @@ Minimalistic Kubernetes distribution for IoT.
 
 Minimalistic Docker-powered PaaS.
 
+## [okd.io](https://www.okd.io/)
 
+OKD is a distribution of Kubernetes optimized for continuous application development and multi-tenant deployment.
 
