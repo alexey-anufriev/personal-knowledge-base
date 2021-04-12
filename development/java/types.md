@@ -82,6 +82,8 @@ class A {
 
 Enums are implicitly static.
 
+Constructors can be private only.
+
 ## Lambda
 
 Any instance fields cannot be accessed from within the lambda, but only final local variables can be:
