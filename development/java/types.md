@@ -183,6 +183,23 @@ class B extends A {
 
 Either `this()` or `super()` can be used in a constructor at a time.
 
+Class fields are accessed by the concrete reference type not the underlying object type:
+
+```text
+static class A {
+    int i = 1;
+}
+
+static class B extends A {
+    int i = 2;
+}
+
+public static void main(String[] args) {
+    A a = new B();
+    System.out.println(a.i); // 1
+}
+```
+
 ## Overloading
 
 When matching the method by parameters primitive types are promoted first, otherwise boxed:
