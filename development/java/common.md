@@ -46,6 +46,41 @@ int g = 3;
 boolean h = g > 4 | --g < 3; // | - eager operator, thus g = 2, h = true
 ```
 
+## Flow Control
+
+```text
+// default statement in switch can be at any position
+
+int a = 0;
+switch (a) {
+    case 1:
+        System.out.println(1);
+        break;
+
+    default:
+        System.out.println("d");
+        break;
+
+    case 2:
+        System.out.println(2);
+        break;
+}
+```
+
+## Advanced `break`
+
+```text
+loop:
+for (int i = 1; i < 10; i++) {
+    System.out.println(i);
+    break loop; // immediate exit from the labeled statement
+}
+System.out.println("done");
+
+// 1
+// done
+```
+
 ## Dynamic Class Casting
 
 Casting is possible not only using explicit types but also using types stored in variables:
