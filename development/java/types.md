@@ -8,6 +8,10 @@ Abstract/default methods cannot be final.
 
 Static declarations are not allowed in inner \(non-static\) classes.
 
+## Enum Structure
+
+Enums are implicitly static.
+
 ## Instantiation
 
 Inner classes instantiation
