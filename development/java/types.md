@@ -61,6 +61,23 @@ class A {
 }
 ```
 
+Local classes can access only final variables:
+
+```text
+class A {
+    void m() {
+        int i = 1;
+        // i = 2; // must be final
+        
+        class B {
+            void m() {
+                System.out.println(i);
+            }
+        }
+    }
+}
+```
+
 ## Enum Structure
 
 Enums are implicitly static.
