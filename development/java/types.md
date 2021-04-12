@@ -43,3 +43,30 @@ public static void main(String[] args) {
 }
 ```
 
+## Inheritance
+
+Child class hides fields with the same name and static methods with the same signature.
+
+```text
+static class A {
+    int val = 1;
+
+    static void m() {
+        System.out.println("A");
+    }
+}
+
+static class B extends A {
+    int val = 3;
+
+    static void m() {
+        System.out.println("B");
+    }
+}
+
+public static void main(String[] args) {
+    System.out.println(new B().val); // 3
+    B.m(); // B
+}
+```
+
