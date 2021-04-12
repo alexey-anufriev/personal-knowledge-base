@@ -183,7 +183,7 @@ class B extends A {
 
 Either `this()` or `super()` can be used in a constructor at a time.
 
-Class fields are accessed by the concrete reference type not the underlying object type:
+Class fields are accessed by the concrete reference type, not the underlying object type:
 
 ```text
 static class A {
@@ -197,6 +197,31 @@ static class B extends A {
 public static void main(String[] args) {
     A a = new B();
     System.out.println(a.i); // 1
+}
+```
+
+Methods are accessed by the underlying object type, not the reference type: 
+
+```text
+static class A {
+    int i = 1;
+    
+    public int getI() {
+        return i;
+    }
+}
+
+static class B extends A {
+    int i = 2;
+
+    public int getI() {
+        return i;
+    }
+}
+
+public static void main(String[] args) {
+    A a = new B();
+    System.out.println(a.getI()); // 2
 }
 ```
 
