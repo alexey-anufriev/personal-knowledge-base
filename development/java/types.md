@@ -2,6 +2,8 @@
 
 ## Interface Structure
 
+Interfaces are implicitly abstract;
+
 Abstract/default methods cannot be final.
 
 ## Class Structure
