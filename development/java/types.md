@@ -28,6 +28,16 @@ class C implements A, B {
 }
 ```
 
+An interface that has one abstract method plus any method inherited from Object is still functional.
+
+```text
+@FunctionalInterface
+interface A {
+    void m();
+    String toString();
+}
+```
+
 ## Class Structure
 
 Static declarations are not allowed in inner \(non-static\) classes.
