@@ -2,7 +2,7 @@
 
 ## Interface Structure
 
-Methods cannot be final.
+Abstract/default methods cannot be final.
 
 ## Class Structure
 
