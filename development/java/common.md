@@ -118,22 +118,6 @@ Integer intVal = intType.cast(objVal);
 
 `object.getClass().isArray()` tells if the object is an array.
 
-## Labeled `break`
-
-The `break` statement terminates the labeled statement; it does not transfer the flow of control to the label. Control flow is transferred to the statement immediately following the labeled \(terminated\) statement.
-
-```text
-String val = "";
-
-loop:
-do {
-    val += "x";
-    break loop;
-} while (true);
-
-System.out.println(val); // x
-```
-
 ## Call to Default Interface Method
 
 ```text
