@@ -109,6 +109,19 @@ static class Test {
 }
 ```
 
+Functional interfaces can operate with primitives:
+
+```text
+@FunctionalInterface
+interface P {
+    int i();
+}
+
+public static void main(String[] args) {
+    P p = () -> 1;
+}
+```
+
 ## Instantiation
 
 Inner classes instantiation
