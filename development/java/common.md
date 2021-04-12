@@ -1,5 +1,15 @@
 # Common
 
+## Variables
+
+`_` \(single underscore\) is not a valid variable name.  
+`var a` is not allowed without value.
+
+```text
+// compilation fail, `str` is not initialized yet
+String str = "123".substring(str.length());
+```
+
 ## Operators Precedence
 
 | Level | Operator | Description | Associativity |
@@ -22,7 +32,7 @@
 | **1** |  `=   +=   -= *=   /=   %= &=   ^=   |= <<=  >>= >>>=` | assignment | right to left |
 
 ```text
-int a = 1; int b = ++a * 2; // 4
+int a = 1, b = ++a * 2; // 4
 
 int c = 2 + 3 * 4; // 2 + 12
 
@@ -33,8 +43,7 @@ boolean e = 5 + 2 == 6; // 7 == 6
 boolean f = false == true || true == true; // false || true
 
 int g = 3;
-// | - eager operator
-boolean h = g > 4 | --g < 3; // g = 2, h = true
+boolean h = g > 4 | --g < 3; // | - eager operator, thus g = 2, h = true
 ```
 
 ## Dynamic Class Casting
