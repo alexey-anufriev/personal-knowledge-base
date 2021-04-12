@@ -6,6 +6,8 @@ Interfaces are implicitly abstract;
 
 Abstract/default methods cannot be final.
 
+When to interfaces defines a default method with the same signature then the class that extends both needs to provide an explicit implementation. 
+
 ## Class Structure
 
 Static declarations are not allowed in inner \(non-static\) classes.
