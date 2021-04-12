@@ -65,6 +65,27 @@ class A {
 
 Enums are implicitly static.
 
+## Lambda
+
+Any instance fields cannot be accessed from within the lambda, but only final local variables can be:
+
+```text
+static class Test {
+    int i = 1;
+
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.i = 2;
+
+        Supplier<Integer> s1 = () -> t.i;
+        
+        int i2 = 3;
+        // i2 = 4; // local var must be final
+        Supplier<Integer> s2 = () -> i2;
+    }
+}
+```
+
 ## Instantiation
 
 Inner classes instantiation
@@ -98,7 +119,7 @@ public static void main(String[] args) {
 
 ## Inheritance
 
-Child class hides fields with the same name and static methods with the same signature.
+Child class hides fields with the same name and static methods with the same signature:
 
 ```text
 static class A {
@@ -120,6 +141,24 @@ static class B extends A {
 public static void main(String[] args) {
     System.out.println(new B().val); // 3
     B.m(); // B
+}
+```
+
+While overriding methods return types must stay covariant:
+
+```text
+class A {
+    public Number n(Number p) {
+        return null;
+    }
+}
+
+class B extends A {
+
+    @Override
+    public Long n(Number p) { // return type must be covariant and compatible
+        return null;
+    }
 }
 ```
 
