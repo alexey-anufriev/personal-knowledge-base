@@ -18,6 +18,7 @@
   * [Common](development/java/common.md)
   * [Spring](development/java/spring.md)
   * [Testing](development/java/testing.md)
+  * [Types](development/java/types.md)
   * [VM](development/java/vm.md)
 * [ML](development/ml.md)
 * [Security](development/basics.md)
