@@ -1,5 +1,42 @@
 # Common
 
+## Operators Precedence
+
+| Level | Operator | Description | Associativity |
+| :--- | :--- | :--- | :--- |
+| **16** | `[] . ()` | access array element access object member parentheses | left to right |
+| **15** | `++ --` | unary post-increment unary post-decrement | not associative |
+| **14** | `++ -- + - ! ~` | unary pre-increment unary pre-decrement unary plus unary minus unary logical NOT unary bitwise NOT | right to left |
+| **13** | `() new` | cast object creation | right to left |
+| **12** | `* / %` | multiplicative | left to right |
+| **11** | `+ - +` | additive string concatenation | left to right |
+| **10** | `<< >> >>>` | shift | left to right |
+| **9** | `< <= > >= instanceof` | relational | not associative |
+| **8** | `== !=` | equality | left to right |
+| **7** | `&` | bitwise AND | left to right |
+| **6** | `^` | bitwise XOR | left to right |
+| **5** | `|` | bitwise OR | left to right |
+| **4** | `&&` | logical AND | left to right |
+| **3** | `||` | logical OR | left to right |
+| **2** | `?:` | ternary | right to left |
+| **1** |  `=   +=   -= *=   /=   %= &=   ^=   |= <<=  >>= >>>=` | assignment | right to left |
+
+```text
+int a = 1; int b = ++a * 2; // 4
+
+int c = 2 + 3 * 4; // 2 + 12
+
+boolean d = 5 > 2 + 4; // 5 > 6
+
+boolean e = 5 + 2 == 6; // 7 == 6
+
+boolean f = false == true || true == true; // false || true
+
+int g = 3;
+// | - eager operator
+boolean h = g > 4 | --g < 3; // g = 2, h = true
+```
+
 ## Dynamic Class Casting
 
 Casting is possible not only using explicit types but also using types stored in variables:
