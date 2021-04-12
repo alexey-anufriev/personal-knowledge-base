@@ -179,3 +179,28 @@ class B extends A {
 }
 ```
 
+Either `this()` or `super()` can be used in a constructor at a time.
+
+## Overloading
+
+When matching the method by parameters primitive types are promoted first, otherwise boxed:
+
+```text
+static void m(int i) {
+    System.out.println("int");
+}
+
+// if this method does not exist then 'Float' printed out
+static void m(double d) {
+    System.out.println("double");
+}
+
+static void m(Float f) {
+    System.out.println("Float");
+}
+
+public static void main(String[] args) {
+    m(1.0f); // double
+}
+```
+
