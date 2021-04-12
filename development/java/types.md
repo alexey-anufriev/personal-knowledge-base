@@ -12,6 +12,8 @@ When to interfaces defines a default method with the same signature then the cla
 
 Static declarations are not allowed in inner \(non-static\) classes.
 
+Static and non-static methods cannot share the same name.
+
 ## Enum Structure
 
 Enums are implicitly static.
