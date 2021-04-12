@@ -6,7 +6,27 @@ Interfaces are implicitly abstract;
 
 Abstract/default methods cannot be final.
 
-When to interfaces defines a default method with the same signature then the class that extends both needs to provide an explicit implementation. 
+When to interfaces defines a default method with the same signature then the class that extends both needs to provide an explicit implementation.
+
+```text
+interface A {
+    default void m() {
+        System.out.println("A");
+    }
+}
+
+interface B {
+    default void m() {
+        System.out.println("B");
+    }
+}
+
+class C implements A, B {
+    public void m() {
+        A.super.m();
+    }
+}
+```
 
 ## Class Structure
 
