@@ -242,6 +242,19 @@ public static void main(String[] args) {
 }
 ```
 
+The overridden method must have same or less restrictive access modifier:
+
+```text
+class A {
+    protected void m() {}
+}
+
+class B extends A {
+    @Override
+    public void m() {} // cannot be private
+}
+```
+
 ## Overloading
 
 When matching the method by parameters primitive types are promoted first, otherwise boxed:
