@@ -78,6 +78,8 @@ class A {
 }
 ```
 
+Static initializers can be skipped if containing class is not loaded at all.
+
 ## Enum Structure
 
 Enums are implicitly static.
