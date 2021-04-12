@@ -38,6 +38,8 @@ interface A {
 }
 ```
 
+All the fields must be initialized as they are implicitly final.
+
 ## Class Structure
 
 Static declarations are not allowed in inner \(non-static\) classes.
