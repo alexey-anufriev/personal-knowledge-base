@@ -44,6 +44,23 @@ Static declarations are not allowed in inner \(non-static\) classes.
 
 Static and non-static methods cannot share the same name.
 
+Members of the inner classes can be accessed in the following way:
+
+```text
+class A {
+    int a = 0;
+    
+    class B {
+        int b = 1;
+        
+        void m() {
+            System.out.println(A.this.a);
+            System.out.println(A.B.this.b);
+        }
+    }
+}
+```
+
 ## Enum Structure
 
 Enums are implicitly static.
