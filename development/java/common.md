@@ -142,7 +142,7 @@ class C implements A, B {
 
 ## Exceptions
 
-try-with-resources suppresses exception thrown by close method if an execution exception is thrown:
+`try-with-resources` suppresses exception thrown by `close` method if an execution exception is thrown:
 
 ```text
 var closeable = new AutoCloseable() {
@@ -166,4 +166,6 @@ catch (Exception e) {
 //  at Test$1.close(FlowControl.java:13)
 //  at Test.main(FlowControl.java:17)
 ```
+
+Resource supplied for `try-with-resource` must be at least effectively final.
 
