@@ -167,5 +167,5 @@ catch (Exception e) {
 //  at Test.main(FlowControl.java:17)
 ```
 
-Resource supplied for `try-with-resource` must be at least effectively final.
+Resource supplied for `try-with-resource` must be at least effectively final. They are closed in reverse order as they were supplied.
 
