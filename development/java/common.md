@@ -184,3 +184,19 @@ catch (NullPointerException e) {
 
 Catch cannot contain checked exceptions that were not thrown by the wrapped code block.
 
+When both, catch and finally blocks throw exceptions then the one from catch block is suppressed by the one from finally block:
+
+```text
+try {
+    throw new NullPointerException();
+}
+catch (RuntimeException e) {
+    throw new ArithmeticException();
+}
+finally {
+    throw new IllegalArgumentException();
+}
+
+// Exception in thread "main" java.lang.ArithmeticException
+```
+
