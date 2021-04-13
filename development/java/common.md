@@ -169,3 +169,5 @@ catch (Exception e) {
 
 Resource supplied for `try-with-resource` must be at least effectively final. They are closed in reverse order as they were supplied.
 
+Catch cannot contain checked exceptions that were not thrown by the wrapped code block.
+
