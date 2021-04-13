@@ -169,5 +169,18 @@ catch (Exception e) {
 
 Resource supplied for `try-with-resource` must be at least effectively final. They are closed in reverse order as they were supplied.
 
+Catch block must be specified for exceptions in order from most specific exception to less specific:
+
+```text
+// not allowed
+
+try {
+}
+catch (RuntimeException e) {
+}
+catch (NullPointerException e) {
+}
+```
+
 Catch cannot contain checked exceptions that were not thrown by the wrapped code block.
 
