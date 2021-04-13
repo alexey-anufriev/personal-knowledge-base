@@ -140,3 +140,30 @@ class C implements A, B {
 }
 ```
 
+## Exceptions
+
+try-with-resources suppresses exception thrown by close method if an execution exception is thrown:
+
+```text
+var closeable = new AutoCloseable() {
+
+    @Override
+    public void close() throws Exception {
+        throw new Exception("close");
+    }
+};
+
+try (closeable) {
+    throw new Exception("exec");
+}
+catch (Exception e) {
+    e.printStackTrace();
+}
+
+//java.lang.Exception: exec
+// at Test.main(FlowControl.java:18)
+// Suppressed: java.lang.Exception: close
+//  at Test$1.close(FlowControl.java:13)
+//  at Test.main(FlowControl.java:17)
+```
+
