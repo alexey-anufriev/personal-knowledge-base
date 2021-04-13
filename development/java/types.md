@@ -255,6 +255,18 @@ class B extends A {
 }
 ```
 
+Overridden method can have different unchecked exception than original one \(not applicable for checked exceptions\):
+
+```text
+class A {
+    void m() throws NullPointerException {}
+}
+
+class B extends A {
+    void m() throws IllegalArgumentException {}
+}
+```
+
 ## Overloading
 
 When matching the method by parameters primitive types are promoted first, otherwise boxed:
