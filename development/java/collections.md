@@ -41,6 +41,8 @@ System.out.println(Arrays.compare(arr3, arr4)); // -2 -> (a-c)
 
 `copyOf(collection)` returns and immutable set with collection copy inside.
 
+`TreeSet` does not allow null values as it needs to compare them.
+
 ## List
 
 `copyOf(collection)` returns and immutable list with collection copy inside.
