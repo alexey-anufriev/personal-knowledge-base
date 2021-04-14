@@ -18,6 +18,13 @@ Arrays.sort(arr);
 System.out.println(Arrays.binarySearch(arr, 2)); // 1
 ```
 
+When element missing binary search returns predicted position in array where it can be. The exact result follows the next formula: _negative possible position in the array - 1_:
+
+```text
+int arr[] = new int[] {1,3,5,7,9};
+System.out.println(Arrays.binarySearch(arr, 4));// -3 -> (-2 - 1)
+```
+
 ## Set
 
 `copyOf(collection)` returns and immutable set with collection copy inside.
