@@ -25,6 +25,18 @@ int arr[] = new int[] {1,3,5,7,9};
 System.out.println(Arrays.binarySearch(arr, 4));// -3 -> (-2 - 1)
 ```
 
+`compare` does lexicographical comparison:
+
+```text
+int arr[] = new int[] {0,3};
+int arr2[] = new int[] {1,2};
+System.out.println(Arrays.compare(arr, arr2)); // -1
+
+String arr3[] = new String[] {"a"};
+String arr4[] = new String[] {"c"};
+System.out.println(Arrays.compare(arr3, arr4)); // -2 -> (a-c)
+```
+
 ## Set
 
 `copyOf(collection)` returns and immutable set with collection copy inside.
