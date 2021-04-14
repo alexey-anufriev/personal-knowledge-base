@@ -200,3 +200,15 @@ finally {
 // Exception in thread "main" java.lang.ArithmeticException
 ```
 
+## Generics
+
+When using concrete type on the left side in the definition then it must be the same on the right side. But types can be different when using lower/upper bounds:
+
+```text
+// not allowed
+List<Number> list = new ArrayList<Integer>();
+
+// allowed
+List<? extends Number> list2 = new ArrayList<Integer>();
+```
+
