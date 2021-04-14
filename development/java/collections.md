@@ -18,6 +18,14 @@ Arrays.sort(arr);
 System.out.println(Arrays.binarySearch(arr, 2)); // 1
 ```
 
+## Set
+
+`copyOf(collection)` returns and immutable set with collection copy inside.
+
+## List
+
+`copyOf(collection)` returns and immutable list with collection copy inside.
+
 ## Deque
 
 `offer` adds to the end;  
