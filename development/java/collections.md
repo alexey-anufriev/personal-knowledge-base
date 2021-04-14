@@ -8,6 +8,16 @@
 
 `int compareTo(T o)` returns: a negative integer, zero, or a positive integer as this object is less than, equal to, or greater than the specified object.
 
+## Arrays
+
+Binary search requires input to be sorted:
+
+```text
+int arr[] = new int[] {4,3,2,1};
+Arrays.sort(arr);
+System.out.println(Arrays.binarySearch(arr, 2)); // 1
+```
+
 ## Deque
 
 `offer` adds to the end;  
