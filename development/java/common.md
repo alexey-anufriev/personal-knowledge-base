@@ -98,6 +98,18 @@ for (int i = 1; i < 3; i++) {
 // j-1
 ```
 
+## Casting
+
+`null` is not possible to cast to primitive:
+
+```text
+List<Integer> ints = new ArrayList<>();
+ints.add(null);
+
+Integer I = ints.get(0);
+int i = ints.get(0); // unboxing throws NullPointerException
+```
+
 ## Dynamic Class Casting
 
 Casting is possible not only using explicit types but also using types stored in variables:
