@@ -47,6 +47,12 @@ System.out.println(Arrays.compare(arr3, arr4)); // -2 -> (a-c)
 
 `copyOf(collection)` returns and immutable list with collection copy inside.
 
+## Queue
+
+`offer` adds to the end;  
+`poll` retrieves and removes the head;  
+`peek` retrieves but not removes the head;
+
 ## Deque
 
 `offer` adds to the end;  
