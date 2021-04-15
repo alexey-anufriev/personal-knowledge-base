@@ -66,3 +66,21 @@ Map<Boolean, List<Integer>> map2 = Stream.of(1, 2, 3, 4, 5)
 System.out.println(map2); // {false=[1, 2, 3], true=[4, 5]}
 ```
 
+`for-each` can be ordered that forces parallel execution to be sequential:
+
+```text
+List.of("a", "b", "c", "d", "e").stream().parallel().forEachOrdered(System.out::print);
+// abcde
+
+List.of("a", "b", "c", "d", "e").stream().parallel().forEach(System.out::print);
+// ceabd
+
+List.of("a", "b", "c", "d", "e").stream().forEachOrdered(System.out::print);
+// abcde
+
+List.of("a", "b", "c", "d", "e").stream().forEach(System.out::print);
+// abcde
+```
+
+
+
