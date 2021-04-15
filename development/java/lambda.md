@@ -22,5 +22,10 @@ ToDoubleBiFunction<Double, Double> f = (double o, double o2) -> o + o2; // not a
 ToDoubleBiFunction<Integer, Double> f2 = (Integer o, Double o2) -> o + o2; // ok
 ```
 
+Instance methods can be also referenced, but in this case instance type is a part of definition, the following examples are equivalent:
 
+```text
+BiFunction<String, Integer, Character> function = (s, i) -> s.charAt(i);
+BiFunction<String, Integer, Character> function2 = String::charAt;
+```
 
