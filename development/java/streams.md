@@ -18,6 +18,13 @@ System.out.println(List.of().stream().spliterator().hasCharacteristics(ORDERED))
 
 `flatMap` converts element into a `Stream`. `flatMapToInt`, `flatMapToDouble`, `flatMapToLong` requires conversion into respective stream \(e.g. `IntStream`\) but not a generic stream.
 
+`sorted` operator may cause the execution to never complete if applied for infinite stream:
+
+```text
+Optional<Integer> first = Stream.generate(() -> 1).sorted().findFirst();
+System.out.println(first.get()); // never reached
+```
+
 ## Terminal Operators
 
 Generic stream requires comparator to find min/max value but specific stream does not:
