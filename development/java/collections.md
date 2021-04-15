@@ -47,6 +47,14 @@ System.out.println(Arrays.compare(arr3, arr4)); // -2 -> (a-c)
 
 `copyOf(collection)` returns and immutable list with collection copy inside.
 
+## Map
+
+Maps require `BiConsumer` to execute `forEach`:
+
+```text
+new HashMap<>().forEach((k, v) -> ...);
+```
+
 ## Queue
 
 `offer` adds to the end;  
