@@ -4,6 +4,16 @@
 
 Stream cannot be reused.
 
+Sets are unordered but lists are ordered:
+
+```text
+System.out.println(Set.of().stream().spliterator().hasCharacteristics(ORDERED));
+// false
+
+System.out.println(List.of().stream().spliterator().hasCharacteristics(ORDERED));
+// true
+```
+
 ## Intermediate Operators
 
 `flatMap` converts element into a `Stream`. `flatMapToInt`, `flatMapToDouble`, `flatMapToLong` requires conversion into respective stream \(e.g. `IntStream`\) but not a generic stream.
