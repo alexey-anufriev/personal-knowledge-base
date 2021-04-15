@@ -36,6 +36,8 @@ String reduce = Stream.of(1, 2, 3, 4).parallel() // IMPORTANT
 System.out.println(reduce); // -1:-2:-3:-4
 ```
 
+To execute a parallel reduction with the `collect()` method, the stream or collector must be unordered, the collector must be concurrent, and the stream must be parallel.
+
 Collecting into map can be done via `groupingBy` or `partitioningBy`:
 
 ```text
