@@ -19,6 +19,7 @@
   * [Common](development/java/common.md)
   * [Lambda](development/java/lambda.md)
   * [Spring](development/java/spring.md)
+  * [Streams](development/java/streams.md)
   * [Testing](development/java/testing.md)
   * [Types](development/java/types.md)
   * [VM](development/java/vm.md)
