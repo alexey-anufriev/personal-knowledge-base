@@ -7,6 +7,8 @@
 `ToDoubleFunction<T>`, `ToIntFunction<T>`, `ToLongFunction<T>` returns primitive out of one argument.  
 `ToDoubleBiFunction<T, U>`, `ToIntBiFunction<T, U>`, `ToLongBiFunction<T, U>` returns primitive out of two arguments.
 
+`Consumer<T>` consumes a value. `DoubleConsumer`, `IntConsumer`, `LongConsumer` consume primitive, thus does not extend `Consumer`.
+
 ## Definition
 
 When boxed types are used as generics for functional interface then primitive types cannot be used in the definition:
