@@ -2,7 +2,7 @@
 
 ## Intermediate Operators
 
-`flatMap` converts element into a `Stream`.
+`flatMap` converts element into a `Stream`. `flatMapToInt`, `flatMapToDouble`, `flatMapToLong` requires conversion into respective stream \(e.g. `IntStream`\) but not a generic stream.
 
 ## Terminal Operators
 
