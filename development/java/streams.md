@@ -12,3 +12,5 @@ Stream s = Stream.of(1, 2, 3);
 System.out.println(s.min(Comparator.comparingInt(o -> (Integer) o)).get());
 ```
 
+Spefic numeric stream e.g. `DoubleStream`, `LongStream` or `IntStream` may return concrete values for `sum` \(0.0 if no elements\) and `count` \(0 if no elements\) operations, and optional values for `min`, `max`, `average` operations.
+
