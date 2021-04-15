@@ -224,3 +224,32 @@ List<Number> list = new ArrayList<Integer>();
 List<? extends Number> list2 = new ArrayList<Integer>();
 ```
 
+Comparison of lower-bound and upper-bound restrictions:
+
+```text
+static class Creature {}
+static class Animal extends Creature {}
+static class Tiger extends Animal {}
+static class Lion extends Animal {}
+
+// lower bound
+
+List<? super Animal> list = new ArrayList<>(); // can be also Object
+
+list.add(new Tiger()); // ok, as list contains supertypes
+list.add(new Lion()); // ok, as list contains supertypes
+
+Creature creature = list.get(0); // error, cast required, can be also Object
+
+// upper bound
+
+List<? extends Animal> list = new ArrayList<>(); // can be any subtype
+
+list.add(new Tiger()); // error, cannot add as it can be any subtype of the Animal
+list.add(new Lion()); // error, cannot add as it can be any subtype of the Animal
+
+Lion lion = list.get(0); // error, cast required, it can be any subtype of the Animal
+```
+
+
+
