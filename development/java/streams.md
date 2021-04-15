@@ -36,3 +36,15 @@ String reduce = Stream.of(1, 2, 3, 4).parallel() // IMPORTANT
 System.out.println(reduce); // -1:-2:-3:-4
 ```
 
+Collecting into map can be done via `groupingBy` or `partitioningBy`:
+
+```text
+Map<Boolean, List<Integer>> map = Stream.of(1, 2, 3, 4, 5)
+        .collect(Collectors.partitioningBy(num -> num > 3));
+System.out.println(map); // {false=[1, 2, 3], true=[4, 5]}
+
+Map<Boolean, List<Integer>> map2 = Stream.of(1, 2, 3, 4, 5)
+        .collect(Collectors.groupingBy(num -> num > 3));
+System.out.println(map2); // {false=[1, 2, 3], true=[4, 5]}
+```
+
