@@ -7,7 +7,7 @@
 `ToDoubleFunction<T>`, `ToIntFunction<T>`, `ToLongFunction<T>` returns primitive out of one argument.  
 `ToDoubleBiFunction<T, U>`, `ToIntBiFunction<T, U>`, `ToLongBiFunction<T, U>` returns primitive out of two arguments.
 
-`Consumer<T>` consumes a value. `DoubleConsumer`, `IntConsumer`, `LongConsumer` consume primitive, thus does not extend `Consumer`.
+`Consumer<T>` consumes a value. `DoubleConsumer`, `IntConsumer`, `LongConsumer` consume primitive, thus does not extend `Consumer`. `BiConsumer<T, U>` consumes two values. `ObjDoubleConsumer<T>`, `ObjIntConsumer<T>`, `ObjLongConsumer<T>` consumes object `T` and respective primitive.
 
 `Function<T, R>` converts `T` to `R`. `BiFunction<T, U, R>` converts `T` and `U` to `R`.  `BinaryOperator<T>` is a `BiFunction<T,T,T>`. `DoubleBinaryOperator`, `IntBinaryOperator`, `LongBinaryOperator` operate with respective primitives thus does not extend `BinaryOperator`.
 
