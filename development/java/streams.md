@@ -1,5 +1,9 @@
 # Streams
 
+## Intermediate Operators
+
+`flatMap` converts element into a `Stream`.
+
 ## Terminal Operators
 
 Generic stream requires comparator to find min/max value but specific stream does not:
