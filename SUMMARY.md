@@ -17,6 +17,7 @@
 * [Java](development/java/README.md)
   * [Collections](development/java/collections.md)
   * [Common](development/java/common.md)
+  * [Lambda](development/java/lambda.md)
   * [Spring](development/java/spring.md)
   * [Testing](development/java/testing.md)
   * [Types](development/java/types.md)
