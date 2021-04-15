@@ -9,6 +9,10 @@
 
 `Consumer<T>` consumes a value. `DoubleConsumer`, `IntConsumer`, `LongConsumer` consume primitive, thus does not extend `Consumer`.
 
+`Function<T, R>` converts `T` to `R`. `BiFunction<T, U, R>` converts `T` and `U` to `R`.  `BinaryOperator<T>` is a `BiFunction<T,T,T>`. `DoubleBinaryOperator`, `IntBinaryOperator`, `LongBinaryOperator` operate with respective primitives thus does not extend `BinaryOperator`.
+
+`DoubleFunction<R>`, `IntFunction<R>` and `LongFunction<R>` conver respective primitive to `R`. `DoubleToIntFunction`, `DoubleToLongFunction`, `IntToDoubleFunction`, `IntToLongFunction`, `LongToDoubleFunction`, `LongToIntFunction` operate with primitives.
+
 ## Definition
 
 When boxed types are used as generics for functional interface then primitive types cannot be used in the definition:
