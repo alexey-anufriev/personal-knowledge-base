@@ -24,6 +24,22 @@ System.out.println(i.min().getAsInt()); // exception, no value present
 System.out.println(i.summaryStatistics().getMax()); // -2147483648
 ```
 
+Numeric streams can map values to anothe primitives or objects:
+
+```text
+LongStream.of(9).mapToDouble(x -> x);
+LongStream.of(9).mapToInt(x -> (int) x);
+LongStream.of(9).mapToObj(x -> x);
+
+IntStream.of(9).mapToDouble(x -> x);
+IntStream.of(9).mapToLong(x -> x);
+IntStream.of(9).mapToObj(x -> x);
+
+DoubleStream.of(9).mapToLong(x -> (long) x);
+DoubleStream.of(9).mapToInt(x -> (int) x);
+DoubleStream.of(9).mapToObj(x -> x);
+```
+
 `accumulator` while reducing is used to combine identity with the element, and `combiner` is used for parallel reduction:
 
 ```text
