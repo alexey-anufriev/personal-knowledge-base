@@ -20,7 +20,7 @@ The `‐d` option is a shorthand for `‐‐describe‐module` on both the `jar`
 
 When running a module, the module name is listed before the slash, and the fully qualified class name is after the slash.
 
-The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
+The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\). Additionally, we remove the version information from the end.
 
 The unnamed module exports all its packages. However, the classes in the unnamed module are only readable by other classes in the unnamed module or from automatic modules. No named module can read the classes of the unnamed module. Code on the classpath has not yet been migrated to modules and can reference any code in the application.
 
