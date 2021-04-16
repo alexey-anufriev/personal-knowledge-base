@@ -6,6 +6,8 @@ description: Jigsaw
 
 ## Common
 
+JMOD is alternative to JAR.  The `jmod` command has five possible modes: `create`, `extract`, `describe`, `list`, and `hash`.
+
 `java --list-modules` gives an ability to list all modules in JDK.
 
 For `javac` `-d` option specifies the directory and `-p` option specifies the module path.
