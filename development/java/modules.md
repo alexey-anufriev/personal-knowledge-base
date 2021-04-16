@@ -22,6 +22,8 @@ The unnamed module exports all its packages. However, the classes in the unnamed
 
 A top‐down migration starts by moving all the modules to the module path as automatic modules. Then, the migration changes each module from an automatic module to a named module.
 
+A bottom‐up migration moves each module after all modules it depends on have been migrated.
+
 ## Service
 
 Jigsaw allows to build pluggable modules in the following way:
