@@ -16,6 +16,8 @@ When running a module, the module name is listed before the slash, and the fully
 
 The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
 
+The unnamed module exports all its packages. However, the classes in the unnamed module are only readable by other classes in the unnamed module or from automatic modules. No named module can read the classes of the unnamed module.
+
 ## Migration
 
 A top‐down migration starts by moving all the modules to the module path as automatic modules. Then, the migration changes each module from an automatic module to a named module.
