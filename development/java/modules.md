@@ -24,6 +24,8 @@ The rules for determining the name of the automatic module include removing the 
 
 The unnamed module exports all its packages. However, the classes in the unnamed module are only readable by other classes in the unnamed module or from automatic modules. No named module can read the classes of the unnamed module. Code on the classpath has not yet been migrated to modules and can reference any code in the application.
 
+Any `requires` directives must reference unique modules. Using the `transitive` keyword does not change this requirement.
+
 ## Migration
 
 A top‐down migration starts by moving all the modules to the module path as automatic modules. Then, the migration changes each module from an automatic module to a named module.
