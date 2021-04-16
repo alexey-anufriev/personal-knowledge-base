@@ -32,3 +32,5 @@ module Consumer {
 ServiceLoader<ServiceInterface> loader = ServiceLoader.load(ServiceInterface.class);
 ```
 
+It is logical to combine the service locator and service provider interface because neither has a direct reference to the service provider.
+
