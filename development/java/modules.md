@@ -12,7 +12,7 @@ JMOD is alternative to JAR.  The `jmod` command has five possible modes: `create
 
 For `javac` `-d` option specifies the directory and `-p` option specifies the module path.
 
-The `jdeps` command lists information about dependencies within a module. The `-s` option provides a summary of output rather than verbose output. `--jdkinternals` lists suggestions for used classes from `jdk.unsupported`. Without any command line flags, `jdeps` lists packages and module dependencies.
+The `jdeps` command lists information about dependencies within a module. The `-s` option provides a summary of output rather than verbose output. `--jdkinternals` lists suggestions for used classes from `jdk.unsupported`. Without any command line flags, `jdeps` lists packages and module dependencies. The `jdeps` command outputs `requires mandated java.base` except when run in summary mode.
 
 `‐m` and `‐p` options are on the `java` command. The `javac` command takes `‐p` for the module path rather than `‐m`.
 
