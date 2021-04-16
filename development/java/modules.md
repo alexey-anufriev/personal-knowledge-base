@@ -10,13 +10,17 @@ description: Jigsaw
 
 For `javac` `-d` option specifies the directory and `-p` option specifies the module path.
 
-The `jdeps` command lists information about dependencies within a module. The `-s` option provides a summary of output rather than verbose output.
+The `jdeps` command lists information about dependencies within a module. The `-s` option provides a summary of output rather than verbose output. `--jdkinternals` lists suggestions for used classes from `jdk.unsupported`. Without any command line flags, `jdeps` lists packages and module dependencies.
+
+`‐m` and `‐p` options are on the `java` command. The `javac` command takes `‐p` for the module path rather than `‐m`.
+
+The `‐d` option is a shorthand for `‐‐describe‐module` on both the `jar` and `java` commands.
 
 When running a module, the module name is listed before the slash, and the fully qualified class name is after the slash.
 
 The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
 
-The unnamed module exports all its packages. However, the classes in the unnamed module are only readable by other classes in the unnamed module or from automatic modules. No named module can read the classes of the unnamed module.
+The unnamed module exports all its packages. However, the classes in the unnamed module are only readable by other classes in the unnamed module or from automatic modules. No named module can read the classes of the unnamed module. Code on the classpath has not yet been migrated to modules and can reference any code in the application.
 
 ## Migration
 
@@ -61,6 +65,8 @@ modules nature.tree {
   provides nature.sapling.Tree with nature.tree.Maple
 }
 ```
+
+Service provider is not treated as a part of service.
 
 It is logical to combine the service locator and service provider interface because neither has a direct reference to the service provider.
 
