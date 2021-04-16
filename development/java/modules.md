@@ -12,6 +12,8 @@ For `javac` `-d` option specifies the directory and `-p` option specifies the mo
 
 The `jdeps` command lists information about dependencies within a module. The `-s` option provides a summary of output rather than verbose output.
 
+When running a module, the module name is listed before the slash, and the fully qualified class name is after the slash.
+
 The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
 
 ## Migration
