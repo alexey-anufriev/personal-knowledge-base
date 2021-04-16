@@ -40,6 +40,22 @@ module Consumer {
 }
 ```
 
+Another service layout example:
+
+```text
+// consumer requires service interface + service locator
+modules nature.tree {
+  requires nature.sapling;
+  requires nature.bush;
+}
+
+// service provider
+modules nature.tree {
+  requires nature.sapling;
+  provides nature.sapling.Tree with nature.tree.Maple
+}
+```
+
 It is logical to combine the service locator and service provider interface because neither has a direct reference to the service provider.
 
 ```text
