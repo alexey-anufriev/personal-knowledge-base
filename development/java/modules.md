@@ -8,6 +8,8 @@ description: Jigsaw
 
 `java --list-modules` gives an ability to list all modules in JDK.
 
+For `javac` `-d` option specifies the directory and `-p` option specifies the module path.
+
 The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
 
 ## Service
