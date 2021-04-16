@@ -8,6 +8,8 @@ description: Jigsaw
 
 `java --list-modules` gives an ability to list all modules in JDK.
 
+The rules for determining the name of the automatic module include removing the extension, removing numbers, and changing special characters to periods \(.\).
+
 ## Service
 
 Jigsaw allows to build pluggable modules in the following way:
@@ -28,9 +30,17 @@ module Consumer {
     requires ServiceInterface;
     uses serviceinterface.ServiceInterface;
 }
-
-ServiceLoader<ServiceInterface> loader = ServiceLoader.load(ServiceInterface.class);
 ```
 
 It is logical to combine the service locator and service provider interface because neither has a direct reference to the service provider.
+
+```text
+ServiceInterface svc = ServiceLoader.load(SomeService.class).findFirst().get();
+
+// or
+
+ServiceLoader.load(ServiceInterface.class).stream()
+        .map(ServiceLoader.Provider::get)
+        .collect(Collectors.toList());
+```
 
