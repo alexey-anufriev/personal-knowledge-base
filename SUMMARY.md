@@ -18,6 +18,7 @@
   * [Collections](development/java/collections.md)
   * [Common](development/java/common.md)
   * [Lambda](development/java/lambda.md)
+  * [Modules](development/java/modules.md)
   * [Spring](development/java/spring.md)
   * [Streams](development/java/streams.md)
   * [Testing](development/java/testing.md)
