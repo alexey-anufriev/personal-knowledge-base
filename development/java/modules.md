@@ -4,6 +4,10 @@ description: Jigsaw
 
 # Modules
 
+## Common
+
+`java --list-modules` gives an ability to list all modules in JDK.
+
 ## Service
 
 Jigsaw allows to build pluggable modules in the following way:
