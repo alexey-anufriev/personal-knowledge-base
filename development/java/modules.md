@@ -25,7 +25,6 @@ module Consumer {
     uses serviceinterface.ServiceInterface;
 }
 
-// loader inside the consumer
 ServiceLoader<ServiceInterface> loader = ServiceLoader.load(ServiceInterface.class);
 ```
 
