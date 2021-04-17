@@ -57,5 +57,22 @@ attributeView.setTimes(...); // access, creation, modification dates
 
 ## `InputStream`
 
-`void mark(int readlimit)` - marks the current position in this input stream. A subsequent call to the reset method repositions this stream at the last marked position so that subsequent reads re-read the same bytes. The `readlimit` arguments tells this input stream to allow that many bytes to be read before the mark position gets invalidated.
+`void mark(int readlimit)` - marks the current position in this input stream. A subsequent call to the reset method repositions this stream at the last marked position so that subsequent reads re-read the same bytes. The `readlimit` arguments tells this input stream to allow that many bytes to be read before the mark position gets invalidated, but this is just a recommendation, a stream may be able to reset even after a bigger number of reads.
+
+```java
+byte[] bytes = new byte[] {1,2,3,4,5,6,7,8,9,10};
+InputStream is = new BufferedInputStream(new ByteArrayInputStream(bytes));
+
+is.read(new byte[2]);
+is.mark(2); // 2 may be ignored
+is.read();
+is.read();
+is.read();
+is.read();
+is.reset();
+System.out.println(is.read()); // 3
+
+is.skip(3);
+System.out.println(is.read()); // 7
+```
 
