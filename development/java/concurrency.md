@@ -113,3 +113,54 @@ cyclicBarrier.await();
 System.out.println(System.currentTimeMillis());
 ```
 
+## Deadlock
+
+```text
+package common;
+
+public class Deadlock {
+
+    private final String name;
+
+    public Deadlock(String name) {
+        this.name = name;
+    }
+
+    public synchronized void m1(Deadlock d) {
+        System.out.println("m1 started for " + name);
+
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
+
+        if (d != null) {
+            d.m2(null);
+        }
+
+        System.out.println("m1 finished for " + name);
+    }
+
+    public synchronized void m2(Deadlock d) {
+        System.out.println("m2 started for " + name);
+
+        try { Thread.sleep(1000); } catch (InterruptedException e) { }
+
+        if (d != null) {
+            d.m1(null);
+        }
+
+        System.out.println("m2 finished for " + name);
+    }
+
+    public static void main(String[] args) {
+
+        Deadlock d1 = new Deadlock("d1");
+        Deadlock d2 = new Deadlock("d2");
+
+        new Thread(() -> d1.m1(d2)).start();
+        new Thread(() -> d2.m2(d1)).start();
+
+    }
+
+}
+
+```
+
