@@ -6,7 +6,7 @@
 
 ## Atomics
 
-Atomic operations must be prefferred for atomic wrappers:
+Atomic operations must be preferred for atomic wrappers:
 
 ```text
 AtomicInteger i = new AtomicInteger(10);
