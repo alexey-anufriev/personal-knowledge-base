@@ -60,7 +60,7 @@ attributeView.setTimes(...); // access, creation, modification dates
 Walking over the FS:
 
 ```java
-Files.walk(Path.of("."), /* maxDepth */ 2) // returns Stream<Path>
+Files.walk(Path.of("."), /* maxDepth, def is Integer.MAX_VALUE */ 2) // Stream<Path>
         .forEach(System.out::println);
 ```
 
@@ -69,7 +69,7 @@ Searching:
 ```java
 Files.find(
         Path.of("."),
-        /* maxDepth */ 1,
+        /* maxDepth, no def value */ 1,
         /* matcher */ (path, attributes) -> true
 ).forEach(System.out::println);
 ```
@@ -94,4 +94,8 @@ System.out.println(is.read()); // 3
 is.skip(3);
 System.out.println(is.read()); // 7
 ```
+
+## `ObjectInputStream`
+
+`readObject()` may return `null` when `writeObject(null)` was executed. Correct stop signal for the reader would be to keep executing `readObject()` until an `EOFException` is thrown.
 
