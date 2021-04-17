@@ -8,7 +8,7 @@
 
 `resolve` returns either other Path if it is absolute, or concatenation:
 
-```text
+```java
 Path abs = Path.of("/abs");
 Path abs2 = Path.of("/abs2");
 Path rel = Path.of("./rel");
@@ -22,7 +22,7 @@ System.out.println(rel.resolve(rel2)); // ./rel/./rel2
 
 relativize build a relative path:
 
-```text
+```java
 Path p1 = Path.of("/p");
 Path p2 = Path.of("/p/sp/ssp");
 
