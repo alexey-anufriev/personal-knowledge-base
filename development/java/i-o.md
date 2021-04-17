@@ -78,6 +78,9 @@ Walking over the FS:
 ```java
 Files.walk(Path.of("."), /* maxDepth, def is Integer.MAX_VALUE */ 2) // Stream<Path>
         .forEach(System.out::println);
+        
+Files.list(Path.of(".")) // Stream<Path>
+        .forEach(System.out::println);
 ```
 
 Searching:
