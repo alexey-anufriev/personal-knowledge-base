@@ -24,11 +24,39 @@ boolean cancel(boolean mayInterruptIfRunning);
 boolean isCancelled();  
 boolean isDone();`
 
+## `Executors`
+
+`newCachedThreadPool()` - creates a thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available.
+
+`newFixedThreadPool​(int nThreads)` - creates a thread pool that reuses a fixed number of threads.
+
+`newScheduledThreadPool​(int corePoolSize)` - creates a thread pool that can schedule commands to run after a given delay, or to execute periodically. Returns `ScheduledExecutorService`.
+
+`newSingleThreadExecutor()` - creates an `Executor` that uses a single worker thread.
+
+`newSingleThreadScheduledExecutor()` - creates a single-threaded executor that can schedule commands to run after a given delay, or to execute periodically.
+
+`newWorkStealingPool()` - creates a work-stealing thread pool using the number of available processors as its target parallelism level.
+
+`newWorkStealingPool​(int parallelism)` - creates a thread pool that maintains enough threads to support the given parallelism level, and may use multiple queues to reduce contention.
+
 ## `ExecutorService`
 
 `<T> Future<T> submit(Callable<T> task)  
+  
 Future<?> submit(Runnable task)  
+  
 <T> Future<T> submit(Runnable task, T result)`
+
+## `ScheduledExecutorService`
+
+`ScheduledFuture<?> schedule​(Runnable command, long delay, TimeUnit unit)  
+  
+<V> ScheduledFuture<V> schedule​(Callable<V> callable, long delay, TimeUnit unit)  
+  
+ScheduledFuture<?> scheduleAtFixedRate​(Runnable command, long initialDelay, long period, TimeUnit unit)  
+  
+ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay, long delay, TimeUnit unit) // delay between the termination of one execution and the start of the next`
 
 ## `Executor`
 
