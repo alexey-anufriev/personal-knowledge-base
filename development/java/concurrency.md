@@ -1,5 +1,18 @@
 # Concurrency
 
+## Collections
+
+Concurrent collections allow modifications while iterating over:
+
+```text
+var nums = List.of(1, 2, 3, 4);
+var copy = new ConcurrentLinkedQueue<>(nums);
+
+for (Integer integer : copy) {
+    copy.remove(integer);
+}
+```
+
 ## `ExecutorService`
 
 `<T> Future<T> submit(Callable<T> task)  
