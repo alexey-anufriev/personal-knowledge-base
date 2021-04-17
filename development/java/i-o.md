@@ -48,6 +48,8 @@ Reading the complete file:
 Files.readAllLines(Path.of("some-file")) // List<String>
         .stream()
         .forEach(System.out::println);
+        
+Files.lines(Path.of("some-file")) // => Stream<String>
 ```
 
 Get file attributes:
