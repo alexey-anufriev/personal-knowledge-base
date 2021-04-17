@@ -4,6 +4,16 @@
 
 **Resource starvation** is when a single active thread is perpetually unable to gain access to a shared resource. **Livelock** is a special case of resource starvation, in which two or more active threads are unable to gain access to shared resources, repeating the process over and over again. **Deadlock** and livelock are similar, although in a deadlock situation the threads are stuck waiting, rather than being active or performing any work. Finally, a **race condition** is an undesirable result when two tasks that should be completed sequentially are completed at the same time.
 
+## Atomics
+
+Atomic operations must be prefferred for atomic wrappers:
+
+```text
+AtomicInteger i = new AtomicInteger(10);
+i.incrementAndGet(); // safe
+i.getAndSet(i.get() + 1); // unsafe
+```
+
 ## Collections
 
 Concurrent collections allow modifications while iterating over:
