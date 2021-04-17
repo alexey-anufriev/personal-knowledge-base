@@ -17,6 +17,8 @@ for (Integer integer : copy) {
 }
 ```
 
+`ConcurrentSkipListMap` implements the `SortedMap`. `ConcurrentSkipListSet` implements the `SortedSet`. In general, all `SkipList` collections are sorted.
+
 ## `Future`
 
 `V get() throws InterruptedException, ExecutionException;  
