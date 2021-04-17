@@ -55,3 +55,7 @@ BasicFileAttributeView attributeView =
 attributeView.setTimes(...); // access, creation, modification dates
 ```
 
+## `InputStream`
+
+`void mark(int readlimit)` - marks the current position in this input stream. A subsequent call to the reset method repositions this stream at the last marked position so that subsequent reads re-read the same bytes. The `readlimit` arguments tells this input stream to allow that many bytes to be read before the mark position gets invalidated.
+
