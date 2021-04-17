@@ -17,6 +17,13 @@ for (Integer integer : copy) {
 }
 ```
 
+## `Future`
+
+`V get() throws InterruptedException, ExecutionException;  
+boolean cancel(boolean mayInterruptIfRunning);  
+boolean isCancelled();  
+boolean isDone();`
+
 ## `ExecutorService`
 
 `<T> Future<T> submit(Callable<T> task)  
