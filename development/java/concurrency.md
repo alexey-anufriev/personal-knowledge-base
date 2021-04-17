@@ -26,6 +26,13 @@ boolean cancel(boolean mayInterruptIfRunning);
 boolean isCancelled();  
 boolean isDone();`
 
+For `Feature` based on `Runnable` the result is `null`:
+
+```text
+Future<?> submit = Executors.newCachedThreadPool().submit(() -> System.out.println("!"));
+System.out.println(submit.get()); // null
+```
+
 ## `Executors`
 
 `newCachedThreadPool()` - creates a thread pool that creates new threads as needed, but will reuse previously constructed threads when they are available.
