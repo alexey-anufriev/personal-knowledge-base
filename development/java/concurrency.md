@@ -70,3 +70,27 @@ ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay
 
 `tryLock()` - asynchronously tries to lock and returns `true` \(plus increments the counter\) if the lock is acquired, or `false` if not.
 
+## `CyclicBarrier`
+
+Allows to sync threads at a single point. The following will be executed in 2 seconds:
+
+```text
+CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
+
+System.out.println(System.currentTimeMillis());
+
+for (int i = 1; i <= 2; i++) {
+    int delay = i;
+    new Thread(() -> {
+        try {
+            Thread.sleep(delay * 1000);
+            cyclicBarrier.await();
+        }
+        catch (Exception e) {}
+    }).start();
+}
+cyclicBarrier.await();
+
+System.out.println(System.currentTimeMillis());
+```
+
