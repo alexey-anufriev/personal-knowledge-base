@@ -39,3 +39,19 @@ Files.readAllLines(Path.of("some-file")) // List<String>
         .forEach(System.out::println);
 ```
 
+Get file attributes:
+
+```java
+BasicFileAttributes attr = 
+        Files.readAttributes(Path.of("some-file"), BasicFileAttributes.class);
+System.out.println(attr.size()); // file size
+```
+
+Modify file's dates:
+
+```java
+BasicFileAttributeView attributeView = 
+        Files.getFileAttributeView(Path.of("some-file"), BasicFileAttributeView.class);
+attributeView.setTimes(...); // access, creation, modification dates
+```
+
