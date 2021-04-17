@@ -67,6 +67,10 @@ Future<?> submit(Runnable task)
   
 <T> Future<T> submit(Runnable task, T result)`
 
+`void shutdown()` - initiates an orderly shutdown in which previously submitted tasks are executed, but no new tasks will be accepted. Invocation has no additional effect if already shut down. This method does not wait for previously submitted tasks to complete execution.
+
+`boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException` - blocks until all tasks have completed execution after a shutdown request, or the timeout occurs, or the current thread is interrupted, whichever happens first.
+
 ## `ScheduledExecutorService`
 
 `ScheduledFuture<?> schedule​(Runnable command, long delay, TimeUnit unit)  
