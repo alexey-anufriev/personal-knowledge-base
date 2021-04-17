@@ -71,6 +71,8 @@ Future<?> submit(Runnable task)
 
 `boolean awaitTermination(long timeout, TimeUnit unit) throws InterruptedException` - blocks until all tasks have completed execution after a shutdown request, or the timeout occurs, or the current thread is interrupted, whichever happens first.
 
+`List<Runnable> shutdownNow()` - attempts to stop all actively executing tasks, halts the processing of waiting tasks, and returns a list of the tasks that were awaiting execution. There are no guarantees of stopped processing of actively executing tasks.
+
 ## `ScheduledExecutorService`
 
 `ScheduledFuture<?> schedule​(Runnable command, long delay, TimeUnit unit)  
