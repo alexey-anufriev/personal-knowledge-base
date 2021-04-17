@@ -117,6 +117,8 @@ cyclicBarrier.await();
 System.out.println(System.currentTimeMillis());
 ```
 
+The execution will not stop if the required number of `await` calls were performed.
+
 ## Deadlock
 
 ```text
