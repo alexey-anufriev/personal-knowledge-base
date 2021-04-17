@@ -60,8 +60,18 @@ attributeView.setTimes(...); // access, creation, modification dates
 Walking over the FS:
 
 ```java
-Files.walk(Path.of("."), 2 /* maxDepth */) // returns Stream<Path>
+Files.walk(Path.of("."), /* maxDepth */ 2) // returns Stream<Path>
         .forEach(System.out::println);
+```
+
+Searching:
+
+```java
+Files.find(
+        Path.of("."),
+        /* maxDepth */ 1,
+        /* matcher */ (path, attributes) -> true
+).forEach(System.out::println);
 ```
 
 ## `InputStream`
