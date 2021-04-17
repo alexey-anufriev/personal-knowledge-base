@@ -33,6 +33,13 @@ System.out.println(p1.relativize(p2)); // sp/ssp
 
 `relativize` can operate over two relative or absolute paths. In case of mix there will be an exception: `IllegalArgumentException: 'other' is different type of Path`.
 
+`subpath` / `toAbsolutePath`:
+
+```java
+Path p = Path.of("/p/sp/ssp");
+System.out.println(p.subpath(1, 2).getName(0).toAbsolutePath()); // <current-dir>/sp
+```
+
 ## `Files`
 
 Reading the complete file:
