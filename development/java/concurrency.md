@@ -68,5 +68,5 @@ ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay
 
 `unlock()` - releases the lock / decreases locks counter.
 
-`tryLock()` - asynchronously tries to lock and returns true \(plus increments the counter\) if the lock is acquired, or false if not.
+`tryLock()` - asynchronously tries to lock and returns `true` \(plus increments the counter\) if the lock is acquired, or `false` if not.
 
