@@ -6,6 +6,10 @@
 
 `System.console()` may be `null`. But `System.in` - not.
 
+## Serialization
+
+When data is deserialized, none of variable initializers, instance initializers, or constructors is called. The class can have static initializers, but they are not called as part of deserialization.
+
 ## `Path`
 
 `resolve` returns either other Path if it is absolute, or concatenation:
