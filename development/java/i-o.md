@@ -10,6 +10,20 @@
 
 When data is deserialized, none of variable initializers, instance initializers, or constructors is called. The class can have static initializers, but they are not called as part of deserialization.
 
+All `transient` and `static` fields do not get serialized.
+
+The `serialVersionUID` is used to verify that the serialized and deserialized objects have the same attributes and thus are compatible with deserialization.
+
+We can override the default serialization behavior inside our Java class by providing the implementation of `writeObject` and `readObject` methods.
+
+And we can call `ObjectOutputStream.defaultWriteObject` and `ObjectInputStream.defaultReadObject` from `writeObject` and `readObject` methods to get the default serialization and deserialization logic.
+
+The Java Serialization process can be further customized and enhanced using the `Externalizable` interface.
+
+`writeReplace` method allows the developer to provide a replacement object that will be serialized instead of the original one. And the `readResolve` method is used during deserialization process to replace the de-serialized object by another one of our choices. The method `readResolve` is called after `readObject` has returned \(conversely `writeReplace` is called before `writeObject` and probably on a different object\).
+
+If we want to perform certain validations on some of our fields, we can do that by implementing `ObjectInputValidation` interface and overriding the `validateObject` method from it. The method `validateObject` will automatically get called when we register this validation by calling `ObjectInputStream.registerValidation(this, 0)` from `readObject` method. It is very useful to verify that stream has not been tampered with, or that the data makes sense before handing it back to your application.
+
 ## `Path`
 
 `resolve` returns either other Path if it is absolute, or concatenation:
