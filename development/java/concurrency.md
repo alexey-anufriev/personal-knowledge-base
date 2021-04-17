@@ -87,11 +87,11 @@ ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay
 
 ## `ReentrantLock`
 
-`lock()` - in the same thread it increments locks counter, but in the new thread it synchronously tries to acquire a lock.
+`void lock()` - in the same thread it increments locks counter, but in the new thread it synchronously tries to acquire a lock.
 
-`unlock()` - releases the lock / decreases locks counter.
+`void unlock()` - releases the lock / decreases locks counter.
 
-`tryLock()` - asynchronously tries to lock and returns `true` \(plus increments the counter\) if the lock is acquired, or `false` if not.
+`boolean tryLock()` - asynchronously tries to lock and returns `true` \(plus increments the counter\) if the lock is acquired, or `false` if not.
 
 ## `CyclicBarrier`
 
