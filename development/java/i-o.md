@@ -22,7 +22,7 @@ System.out.println(rel.resolve(abs));  // /abs
 System.out.println(rel.resolve(rel2)); // ./rel/./rel2
 ```
 
-relativize build a relative path:
+`relativize` build a relative path:
 
 ```java
 Path p1 = Path.of("/p");
@@ -30,6 +30,8 @@ Path p2 = Path.of("/p/sp/ssp");
 
 System.out.println(p1.relativize(p2)); // sp/ssp
 ```
+
+`relativize` can operate over two relative or absolute paths. In case of mix there will be an exception: `IllegalArgumentException: 'other' is different type of Path`.
 
 ## `Files`
 
