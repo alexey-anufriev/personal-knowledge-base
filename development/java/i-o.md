@@ -37,7 +37,8 @@ System.out.println(p1.relativize(p2)); // sp/ssp
 
 ```java
 Path p = Path.of("/p/sp/ssp");
-System.out.println(p.subpath(1, 2).getName(0).toAbsolutePath()); // <current-dir>/sp
+System.out.println(p.subpath(1 /* start inclusive */, 2 /* end, exclusive */)
+        .getName(0).toAbsolutePath()); // <current-dir>/sp
 ```
 
 ## `Files`
