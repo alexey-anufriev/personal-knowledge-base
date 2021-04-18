@@ -62,7 +62,17 @@ Object get(Object key)`
 
 Getters return `null` if no value found.
 
-## ResourceBundle
+## `ResourceBundle`
 
 `String getString(String key)` - `MissingResourceException` – if no object for the given key can be found.
+
+## `LocalDate`
+
+Cannot be formatted to time:
+
+```text
+var d = LocalDate.of(2021, 4, 18);
+System.out.println(d.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
+// UnsupportedTemporalTypeException
+```
 
