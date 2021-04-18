@@ -62,3 +62,7 @@ Object get(Object key)`
 
 Getters return `null` if no value found.
 
+## ResourceBundle
+
+`String getString(String key)` - `MissingResourceException` – if no object for the given key can be found.
+
