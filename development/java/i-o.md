@@ -24,6 +24,17 @@ The Java Serialization process can be further customized and enhanced using the 
 
 If we want to perform certain validations on some of our fields, we can do that by implementing `ObjectInputValidation` interface and overriding the `validateObject` method from it. The method `validateObject` will automatically get called when we register this validation by calling `ObjectInputStream.registerValidation(this, 0)` from `readObject` method. It is very useful to verify that stream has not been tampered with, or that the data makes sense before handing it back to your application.
 
+In the following way the list of fields to serialization can be customized:
+
+```java
+class List implements Serializable {
+    List next;
+
+    private static final ObjectStreamField[] serialPersistentFields
+                 = {new ObjectStreamField("next", List.class)};
+}
+```
+
 ## `Path`
 
 `resolve` returns either other Path if it is absolute, or concatenation:
