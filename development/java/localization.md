@@ -60,3 +60,5 @@ Java starts out by looking for a properties file with the requested locale. If i
 `String getProperty(String key, String defaultValue)  
 Object get(Object key)`
 
+Getters return `null` if no value found.
+
