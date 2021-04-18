@@ -19,6 +19,7 @@
   * [Common](development/java/common.md)
   * [Concurrency](development/java/concurrency.md)
   * [I/O](development/java/i-o.md)
+  * [JDBC](development/java/jdbc.md)
   * [Lambda](development/java/lambda.md)
   * [Modules](development/java/modules.md)
   * [Security](development/java/security.md)
