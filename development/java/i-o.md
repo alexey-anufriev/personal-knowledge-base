@@ -143,6 +143,8 @@ System.out.println(is.read()); // 7
 
 `readObject()` may return `null` when `writeObject(null)` was executed. Correct stop signal for the reader would be to keep executing `readObject()` until an `EOFException` is thrown.
 
+`ObjectInputStream.GetField readFields()` reads the persistent fields from the stream and makes them available by name
+
 ## try-with-resources
 
 On the last line exception will happen as the input stream has been already closed, but an exception will not be printed as the stream for errors has been also closed:
