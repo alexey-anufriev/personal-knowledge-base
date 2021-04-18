@@ -4,6 +4,8 @@
 
 Locale as a geographical, political, or cultural region.
 
+ In Java, a locale can be represented by a language code in lowercase, or a language and country code, with language in lowercase and country in uppercase.
+
 Java starts out by looking for a properties file with the requested locale. If it doesn't find it, then it moves onto the default locale.
 
 `Locale` has `getDefault()` and `setDefault()` methods for working with the default locale.
