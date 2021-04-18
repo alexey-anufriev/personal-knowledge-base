@@ -1,6 +1,6 @@
 # JDBC
 
-## PreparedStatement
+## `PreparedStatement`
 
 `boolean execute() throws SQLException` - `true` if the first result is a `ResultSet` object; `false` if the first result is an update count or there is no result. You must call either the method `getResultSet` or `getUpdateCount` to retrieve the result.
 
@@ -9,4 +9,8 @@
 `int executeUpdate() throws SQLException` - executes the SQL statement in this `PreparedStatement` object, which must be an SQL Data Manipulation Language \(DML\) statement, such as INSERT, UPDATE or DELETE; or an SQL statement that returns nothing, such as a DDL statement.
 
 `void setString(int parameterIndex, String x) throws SQLException` - throws `SQLException` if `parameterIndex` does not correspond to a parameter marker in the SQL statement.
+
+## `CallableStatement`
+
+The interface used to execute SQL stored procedures.
 
