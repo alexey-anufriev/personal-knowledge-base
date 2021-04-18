@@ -44,3 +44,41 @@ grant codeBase "file:target/spring-petclinic-1.4.2.jar" {
 };
 ```
 
+## `AccessController`
+
+Check permissions:
+
+```text
+FilePermission perm = new FilePermission("/temp/testFile", "read");
+AccessController.checkPermission(perm);
+```
+
+Execute code w/o checking permissions:
+
+```text
+AccessController.doPrivileged(new PrivilegedAction<Void>() {
+    public Void run() {
+        System.out.println(System.getProperties());
+        return null;
+    }
+});
+```
+
+\(from [https://stackoverflow.com/questions/8703234/accesscontroller-usage](https://stackoverflow.com/questions/8703234/accesscontroller-usage)\)
+
+You would use `AccessController.doPrivileged()` to give certain code privileges that code earlier in the calling stack DOES NOT have but which the privileged codes DOES have by virtue of that privilege being granted in a policy. 
+
+For example, assume `ClassA` invokes methods on `ClassB`, and `ClassB` needs to read the `java.home` system property \(to borrow from your example\), and assume that you've specified that `SecurityManager` is present as per your example.
+
+Also assume that `ClassB` is loaded from a jar named "`classb.jar`" \(but to make the example work `ClassA` is NOT loaded from that jar\), the following should be in the security policy file:
+
+```text
+grant codeBase "file:/home/somebody/classb.jar" { 
+    permission java.util.PropertyPermission "java.home", "read";
+};
+```
+
+Now when `ClassB` runs and tries to do a `System.getProperty()` which is NOT wrapped in an `AccessController.doPrivileged()` on "`java.home`". The security manager will check the stack to see if every class higher on the stack has `PropertyPermission` \(whether directly or implied\) for "`java.home`". If not, the access will fail.
+
+However, if `ClassB` wraps the `System.getProperty()` in an `AccessController.doPrivileged()` the `SecurityManager` only cares that the policy file gives `ClassB` that privilege and so the access is allowed.
+
