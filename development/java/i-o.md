@@ -24,6 +24,40 @@ The Java Serialization process can be further customized and enhanced using the 
 
 If we want to perform certain validations on some of our fields, we can do that by implementing `ObjectInputValidation` interface and overriding the `validateObject` method from it. The method `validateObject` will automatically get called when we register this validation by calling `ObjectInputStream.registerValidation(this, 0)` from `readObject` method. It is very useful to verify that stream has not been tampered with, or that the data makes sense before handing it back to your application.
 
+```java
+@Override
+public void validateObject() {
+    System.out.println("Validating");
+}
+
+// Custom serialization logic
+private void writeObject(ObjectOutputStream oos) throws IOException {
+    System.out.println("Custom serialization logic invoked.");
+    oos.defaultWriteObject(); // Calling the default serialization logic
+}
+
+// Replacing serializing object
+private Object writeReplace() throws ObjectStreamException {
+    System.out.println("Replacing serialising object by this.");
+    return this;
+}
+
+// Custom de-serialization logic
+private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+    System.out.println("Custom deserialization logic invoked.");
+
+    ois.registerValidation(this, 0); // Registering validations
+
+    ois.defaultReadObject(); // Calling the default deserialization logic.
+}
+
+// Replacing de-serializing object with this,
+private Object readResolve() throws ObjectStreamException {
+    System.out.println("Replacing de-serializing object by this.");
+    return this;
+}
+```
+
 In the following way the list of fields to serialization can be customized:
 
 ```java
