@@ -67,6 +67,8 @@ switch (a) {
 }
 ```
 
+A `switch` statement supports the primitive types `byte`, `short`, `char`, and `int` and their associated wrapper classes `Character`, `Byte`, `Short`, and `Integer`. It also supports the `String` class and enumerated types. Finally, it permits `var` under some circumstances, such as if the type can resolve to one of the previous types.
+
 ## Advanced `break/continue`
 
 ```text
