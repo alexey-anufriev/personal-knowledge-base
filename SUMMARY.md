@@ -15,6 +15,7 @@
   * [Cluster](development/infrastructure/cluster.md)
   * [Kubernetes](development/infrastructure/kubernetes.md)
 * [Java](development/java/README.md)
+  * [Annotation](development/java/annotation.md)
   * [Collections](development/java/collections.md)
   * [Common](development/java/common.md)
   * [Concurrency](development/java/concurrency.md)
