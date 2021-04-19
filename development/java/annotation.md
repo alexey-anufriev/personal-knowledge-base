@@ -21,5 +21,19 @@ public static void main(String[] args) {
 }
 ```
 
+Multiple annotations can be applied at once:
 
+```text
+@Repeatable(Collection.class)
+@interface Item {
+    int id();
+}
+    
+@interface Collection {
+    Item[] value();
+}
+
+@Collection({ @Item(id = 1), @Item(id = 2) })
+static class T {}
+```
 
