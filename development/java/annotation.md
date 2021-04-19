@@ -37,3 +37,5 @@ Multiple annotations can be applied at once:
 static class T {}
 ```
 
+`@SafeVarargs` is not allowed on non-final instance methods.
+
