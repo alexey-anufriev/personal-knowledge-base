@@ -35,6 +35,12 @@ Multiple annotations can be applied at once:
 
 @Collection({ @Item(id = 1), @Item(id = 2) })
 static class T {}
+
+// alternative
+
+@Item(id = 1)
+@Item(id = 2)
+static class T {}
 ```
 
 `@SafeVarargs` is not allowed on non-final instance methods.
