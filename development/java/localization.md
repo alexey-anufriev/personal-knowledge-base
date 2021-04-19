@@ -10,6 +10,8 @@ Java starts out by looking for a properties file with the requested locale. If i
 
 `Locale` has `getDefault()` and `setDefault()` methods for working with the default locale.
 
+There are two categories for locales: `Category.DISPLAY` \(to represent the default locale for displaying user interfaces\) and `Category.FORMAT` \(used to represent the default locale for formatting dates, numbers, and/or currencies\).
+
 ## `DateTimeFormatter`
 
 | Symbol | Meaning | Presentation | Examples |
