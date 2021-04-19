@@ -57,6 +57,31 @@ There are two categories for locales: `Category.DISPLAY` \(to represent the defa
 | { | reserved for future use |  |  |
 | } | reserved for future use |  |  |
 
+## `MessageFormat`
+
+```text
+int planet = 7;
+String event = "a disturbance in the Force";
+
+String result = MessageFormat.format(
+    "At {1,time} on {1,date}, there was {2} on planet {0,number,integer}.",
+    planet, new Date(), event);
+
+// At 12:30 PM on Jul 3, 2053, there was a disturbance in the Force on planet 7.
+
+
+int fileCount = 1273;
+String diskName = "MyDisk";
+Object[] testArgs = {new Long(fileCount), diskName};
+
+MessageFormat form = new MessageFormat(
+    "The disk \"{1}\" contains {0} file(s).");
+
+System.out.println(form.format(testArgs));
+
+// The disk "MyDisk" contains 1,273 file(s).
+```
+
 ## `Properties`
 
 `String getProperty(String key, String defaultValue)  
