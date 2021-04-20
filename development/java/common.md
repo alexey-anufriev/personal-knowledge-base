@@ -253,5 +253,9 @@ list.add(new Lion()); // error, cannot add as it can be any subtype of the Anima
 Lion lion = list.get(0); // error, cast required, it can be any subtype of the Animal
 ```
 
+## Classes
 
+Member inner class cannot contain static methods.
+
+Local class can access all local variables that are at least effectively final.
 
