@@ -261,3 +261,17 @@ Local class can access all local variables that are at least effectively final.
 
 Every non-static method in Java is by default a virtual method. The behavior of a virtual function can be overridden with the inheriting class function with the same name.
 
+Fields \(unlike methods\) are accessed by the type of the reference:
+
+```java
+static class A {int i = 1;}
+static class B extends A {int i = 2;}
+
+public static void main(String[] args) throws IOException {
+    A a = new A();
+    System.out.println(a.i); // 1
+    A b = new B();
+    System.out.println(b.i); // 1
+}
+```
+
