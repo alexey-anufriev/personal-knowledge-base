@@ -25,6 +25,8 @@ Optional<Integer> first = Stream.generate(() -> 1).sorted().findFirst();
 System.out.println(first.get()); // never reached
 ```
 
+`IntStream.boxed()` converts a stream into `Stream<Integer>`.
+
 ## Terminal Operators
 
 Generic stream requires comparator to find min/max value but specific stream does not:
