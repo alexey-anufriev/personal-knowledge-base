@@ -259,3 +259,5 @@ Member inner class cannot contain static methods.
 
 Local class can access all local variables that are at least effectively final.
 
+Every non-static method in Java is by default a virtual method. The behavior of a virtual function can be overridden with the inheriting class function with the same name.
+
