@@ -25,7 +25,7 @@ Optional<Integer> first = Stream.generate(() -> 1).sorted().findFirst();
 System.out.println(first.get()); // never reached
 ```
 
-`IntStream.boxed()` converts a stream into `Stream<Integer>`.
+`IntStream.boxed()` converts a stream into `Stream<Integer>`. `Stream.mapToInt()` converts the stream back to `IntStream`.
 
 ## Terminal Operators
 
