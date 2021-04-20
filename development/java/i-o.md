@@ -152,6 +152,13 @@ Files.find(
 ).forEach(System.out::println);
 ```
 
+Create single directories:
+
+```java
+Path createDirectory(Path dir, FileAttribute<?>... attrs) // single one
+Path createDirectories(Path dir, FileAttribute<?>... attrs) // with missing parents
+```
+
 ## `InputStream`
 
 `void mark(int readlimit)` - marks the current position in this input stream. A subsequent call to the reset method repositions this stream at the last marked position so that subsequent reads re-read the same bytes. The `readlimit` arguments tells this input stream to allow that many bytes to be read before the mark position gets invalidated, but this is just a recommendation, a stream may be able to reset even after a bigger number of reads.
