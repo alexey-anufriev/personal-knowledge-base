@@ -45,3 +45,5 @@ static class T {}
 
 `@SafeVarargs` is not allowed on non-final instance methods.
 
+`@Documented` can be applied on annotations only and forces related documentation to appear in `javadoc`.
+
