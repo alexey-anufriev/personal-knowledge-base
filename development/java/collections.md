@@ -37,6 +37,10 @@ String arr4[] = new String[] {"c"};
 System.out.println(Arrays.compare(arr3, arr4)); // -2 -> (a-c)
 ```
 
+```text
+Arrays.asList() // fixed size list, modifications are not allowed
+```
+
 ## Set
 
 `copyOf(collection)` returns and immutable set with collection copy inside.
