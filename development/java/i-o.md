@@ -201,3 +201,13 @@ try (reader; err) {
 System.out.println(reader.readLine());
 ```
 
+try-with-resources operates with at least effectively final variables, the following is not allowed
+
+```java
+Closeable c = null;
+try (c) {} // error here
+catch (Exception e) {
+    c = null;
+}
+```
+
