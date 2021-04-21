@@ -3,7 +3,7 @@
 ## Variables
 
 `_` \(single underscore\) is not a valid variable name.  
-`var a` is not allowed without value.
+`var a;` is not allowed without value.
 
 ```text
 // compilation fail, `str` is not initialized yet
@@ -181,7 +181,7 @@ catch (Exception e) {
 //  at Test.main(FlowControl.java:17)
 ```
 
-Resource supplied for `try-with-resource` must be at least effectively final. They are closed in reverse order as they were supplied.
+Resources supplied for `try-with-resource` must be at least effectively final. They are closed in reverse order as they were supplied.
 
 Catch block must be specified for exceptions in order from most specific exception to less specific:
 
@@ -198,7 +198,7 @@ catch (NullPointerException e) {
 
 Catch cannot contain checked exceptions that were not thrown by the wrapped code block.
 
-When both, catch and finally blocks throw exceptions then the one from catch block is suppressed by the one from finally block:
+When both, catch and finally blocks throw exceptions then the one from catch block is suppresses the one from finally block:
 
 ```text
 try {
@@ -261,7 +261,7 @@ Local class can access all local variables that are at least effectively final.
 
 Every non-static method in Java is by default a virtual method. The behavior of a virtual function can be overridden with the inheriting class function with the same name.
 
-Fields \(unlike methods\) are accessed by the type of the reference:
+Fields \(unlike methods\) are accessed by the type of reference:
 
 ```java
 static class A {int i = 1;}

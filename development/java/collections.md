@@ -43,13 +43,13 @@ Arrays.asList() // fixed size list, modifications are not allowed
 
 ## Set
 
-`copyOf(collection)` returns and immutable set with collection copy inside.
+`copyOf(collection)` returns an immutable set with collection copy inside.
 
 `TreeSet` does not allow null values as it needs to compare them.
 
 ## List
 
-`copyOf(collection)` returns and immutable list with collection copy inside.
+`copyOf(collection)` returns an immutable list with collection copy inside.
 
 ## Map
 
