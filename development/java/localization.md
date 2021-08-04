@@ -2,7 +2,7 @@
 
 ## Common
 
-Locale as a geographical, political, or cultural region.
+Locale is a geographical, political, or cultural region.
 
  In Java, a locale can be represented by a language code in lowercase, or a language and country code, with language in lowercase and country in uppercase. Locale cannot be constructed from a single parameter that joins both components.
 
