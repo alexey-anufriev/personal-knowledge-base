@@ -8,7 +8,7 @@ $$
 
 **Where**: S - set of characters, L - password length.
 
-**Example**: password consists of character used by `base64` encoding has a length of 10 symbols.
+**Example**: password consists of characters used by `base64` encoding has a length of 10 symbols.
 
 $$
 E = log_2(64^{10}) = 60 bits
