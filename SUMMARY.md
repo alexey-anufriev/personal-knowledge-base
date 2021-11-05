@@ -25,6 +25,7 @@
   * [Localization](development/java/localization.md)
   * [Lock](development/java/lock.md)
   * [Modules](development/java/modules.md)
+  * [Messaging](development/java/messaging.md)
   * [Security](development/java/security.md)
   * [Spring](development/java/spring.md)
   * [Streams](development/java/streams.md)
