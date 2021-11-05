@@ -23,6 +23,7 @@
   * [JDBC](development/java/jdbc.md)
   * [Lambda](development/java/lambda.md)
   * [Localization](development/java/localization.md)
+  * [Lock](development/java/lock.md)
   * [Modules](development/java/modules.md)
   * [Security](development/java/security.md)
   * [Spring](development/java/spring.md)
