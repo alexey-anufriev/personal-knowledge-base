@@ -2,36 +2,36 @@
 
 ## Variables
 
-`_` \(single underscore\) is not a valid variable name.  
+`_` (single underscore) is not a valid variable name.\
 `var a;` is not allowed without value.
 
-```text
+```
 // compilation fail, `str` is not initialized yet
 String str = "123".substring(str.length());
 ```
 
 ## Operators Precedence
 
-| Level | Operator | Description | Associativity |
-| :--- | :--- | :--- | :--- |
-| **16** | `[] . ()` | access array element access object member parentheses | left to right |
-| **15** | `++ --` | unary post-increment unary post-decrement | not associative |
-| **14** | `++ -- + - ! ~` | unary pre-increment unary pre-decrement unary plus unary minus unary logical NOT unary bitwise NOT | right to left |
-| **13** | `() new` | cast object creation | right to left |
-| **12** | `* / %` | multiplicative | left to right |
-| **11** | `+ - +` | additive string concatenation | left to right |
-| **10** | `<< >> >>>` | shift | left to right |
-| **9** | `< <= > >= instanceof` | relational | not associative |
-| **8** | `== !=` | equality | left to right |
-| **7** | `&` | bitwise AND | left to right |
-| **6** | `^` | bitwise XOR | left to right |
-| **5** | `|` | bitwise OR | left to right |
-| **4** | `&&` | logical AND | left to right |
-| **3** | `||` | logical OR | left to right |
-| **2** | `?:` | ternary | right to left |
-| **1** |  `=   +=   -= *=   /=   %= &=   ^=   |= <<=  >>= >>>=` | assignment | right to left |
+| Level  | Operator                                                                                                                                | Description                                                                                                              | Associativity   |
+| ------ | --------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | --------------- |
+| **16** | <p><code>[]</code><br><code>.</code><br><code>()</code></p>                                                                             | <p>access array element<br>access object member<br>parentheses</p>                                                       | left to right   |
+| **15** | <p><code>++</code><br><code>--</code></p>                                                                                               | <p>unary post-increment<br>unary post-decrement</p>                                                                      | not associative |
+| **14** | <p><code>++</code><br><code>--</code><br><code>+</code><br><code>-</code><br><code>!</code><br><code>~</code></p>                       | <p>unary pre-increment<br>unary pre-decrement<br>unary plus<br>unary minus<br>unary logical NOT<br>unary bitwise NOT</p> | right to left   |
+| **13** | <p><code>()</code><br><code>new</code></p>                                                                                              | <p>cast<br>object creation</p>                                                                                           | right to left   |
+| **12** | `* / %`                                                                                                                                 | multiplicative                                                                                                           | left to right   |
+| **11** | <p><code>+ -</code><br><code>+</code></p>                                                                                               | <p>additive<br>string concatenation</p>                                                                                  | left to right   |
+| **10** | `<< >> >>>`                                                                                                                             | shift                                                                                                                    | left to right   |
+| **9**  | <p><code>&#x3C; &#x3C;= > >=</code><br><code>instanceof</code></p>                                                                      | relational                                                                                                               | not associative |
+| **8**  | `== !=`                                                                                                                                 | equality                                                                                                                 | left to right   |
+| **7**  | `&`                                                                                                                                     | bitwise AND                                                                                                              | left to right   |
+| **6**  | `^`                                                                                                                                     | bitwise XOR                                                                                                              | left to right   |
+| **5**  | `\|`                                                                                                                                    | bitwise OR                                                                                                               | left to right   |
+| **4**  | `&&`                                                                                                                                    | logical AND                                                                                                              | left to right   |
+| **3**  | `\|\|`                                                                                                                                  | logical OR                                                                                                               | left to right   |
+| **2**  | `?:`                                                                                                                                    | ternary                                                                                                                  | right to left   |
+| **1**  | <p> <code>=   +=   -=</code><br><code>*=   /=   %=</code><br><code>&#x26;=   ^=   |=</code><br><code>&#x3C;&#x3C;=  >>= >>>=</code></p> | assignment                                                                                                               | right to left   |
 
-```text
+```
 int a = 1, b = ++a * 2; // 4
 
 int c = 2 + 3 * 4; // 2 + 12
@@ -48,7 +48,7 @@ boolean h = g > 4 | --g < 3; // | - eager operator, thus g = 2, h = true
 
 ## Flow Control
 
-```text
+```
 // default statement in switch can be at any position
 
 int a = 0;
@@ -71,7 +71,7 @@ A `switch` statement supports the primitive types `byte`, `short`, `char`, and `
 
 ## Advanced `break/continue`
 
-```text
+```
 loop:
 for (int i = 1; i < 10; i++) {
     System.out.println(i);
@@ -83,7 +83,7 @@ System.out.println("done");
 // done
 ```
 
-```text
+```
 loop:
 for (int i = 1; i < 3; i++) {
     for (int j = 1; j < 3; j++) {
@@ -104,7 +104,7 @@ for (int i = 1; i < 3; i++) {
 
 `null` is not possible to cast to primitive:
 
-```text
+```
 List<Integer> ints = new ArrayList<>();
 ints.add(null);
 
@@ -116,7 +116,7 @@ int i = ints.get(0); // unboxing throws NullPointerException
 
 Casting is possible not only using explicit types but also using types stored in variables:
 
-```text
+```
 Class<Integer> intType = Integer.class;
 Object objVal = 1;
 Integer intVal = intType.cast(objVal);
@@ -126,7 +126,7 @@ Integer intVal = intType.cast(objVal);
 
 `Array.newInstance(elementType, length)` to generate a new array, it returns `Object`.
 
-`Array.getLength(sourceArray)` to get the length of the array \(if represented with an `Object`\).
+`Array.getLength(sourceArray)` to get the length of the array (if represented with an `Object`).
 
 ## Is Object Array?
 
@@ -134,7 +134,7 @@ Integer intVal = intType.cast(objVal);
 
 ## Call to Default Interface Method
 
-```text
+```
 interface A {
     default void m() {
         // some logic
@@ -158,7 +158,7 @@ class C implements A, B {
 
 `try-with-resources` suppresses exception thrown by `close` method if an execution exception is thrown:
 
-```text
+```
 var closeable = new AutoCloseable() {
 
     @Override
@@ -185,7 +185,7 @@ Resources supplied for `try-with-resource` must be at least effectively final. T
 
 Catch block must be specified for exceptions in order from most specific exception to less specific:
 
-```text
+```
 // not allowed
 
 try {
@@ -200,7 +200,7 @@ Catch cannot contain checked exceptions that were not thrown by the wrapped code
 
 When both, catch and finally blocks throw exceptions then the one from catch block is suppresses the one from finally block:
 
-```text
+```
 try {
     throw new NullPointerException();
 }
@@ -218,7 +218,7 @@ finally {
 
 When using concrete type on the left side in the definition then it must be the same on the right side. But types can be different when using lower/upper bounds:
 
-```text
+```
 // not allowed
 List<Number> list = new ArrayList<Integer>();
 
@@ -228,7 +228,7 @@ List<? extends Number> list2 = new ArrayList<Integer>();
 
 Comparison of lower-bound and upper-bound restrictions:
 
-```text
+```
 static class Creature {}
 static class Animal extends Creature {}
 static class Tiger extends Animal {}
@@ -261,7 +261,7 @@ Local class can access all local variables that are at least effectively final.
 
 Every non-static method in Java is by default a virtual method. The behavior of a virtual function can be overridden with the inheriting class function with the same name.
 
-Fields \(unlike methods\) are accessed by the type of reference:
+Fields (unlike methods) are accessed by the type of reference:
 
 ```java
 static class A {int i = 1;}
@@ -274,4 +274,3 @@ public static void main(String[] args) throws IOException {
     System.out.println(b.i); // 1
 }
 ```
-

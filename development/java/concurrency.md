@@ -8,7 +8,7 @@
 
 Atomic operations must be preferred for atomic wrappers:
 
-```text
+```
 AtomicInteger i = new AtomicInteger(10);
 i.incrementAndGet(); // safe
 i.getAndSet(i.get() + 1); // unsafe
@@ -18,7 +18,7 @@ i.getAndSet(i.get() + 1); // unsafe
 
 Concurrent collections allow modifications while iterating over:
 
-```text
+```
 var nums = List.of(1, 2, 3, 4);
 var copy = new ConcurrentLinkedQueue<>(nums); // also LinkedBlockingQueue
 
@@ -31,14 +31,14 @@ for (Integer integer : copy) {
 
 ## `Future`
 
-`V get() throws InterruptedException, ExecutionException;  
-boolean cancel(boolean mayInterruptIfRunning);  
-boolean isCancelled();  
-boolean isDone();`
+`V get() throws InterruptedException, ExecutionException;`\
+`boolean cancel(boolean mayInterruptIfRunning);`\
+`boolean isCancelled();`\
+`boolean isDone();`
 
 For `Feature` based on `Runnable` the result is `null`:
 
-```text
+```
 Future<?> submit = Executors.newCachedThreadPool().submit(() -> System.out.println("!"));
 System.out.println(submit.get()); // null
 ```
@@ -61,11 +61,11 @@ System.out.println(submit.get()); // null
 
 ## `ExecutorService`
 
-`<T> Future<T> submit(Callable<T> task)  
-  
-Future<?> submit(Runnable task)  
-  
-<T> Future<T> submit(Runnable task, T result)`
+`<T> Future<T> submit(Callable<T> task)`\
+``\
+`Future<?> submit(Runnable task)`\
+``\
+`<T> Future<T> submit(Runnable task, T result)`
 
 `void shutdown()` - initiates an orderly shutdown in which previously submitted tasks are executed, but no new tasks will be accepted. Invocation has no additional effect if already shut down. This method does not wait for previously submitted tasks to complete execution.
 
@@ -75,13 +75,13 @@ Future<?> submit(Runnable task)
 
 ## `ScheduledExecutorService`
 
-`ScheduledFuture<?> schedule​(Runnable command, long delay, TimeUnit unit)  
-  
-<V> ScheduledFuture<V> schedule​(Callable<V> callable, long delay, TimeUnit unit)  
-  
-ScheduledFuture<?> scheduleAtFixedRate​(Runnable command, long initialDelay, long period, TimeUnit unit)  
-  
-ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay, long delay, TimeUnit unit) // delay between the termination of one execution and the start of the next`
+`ScheduledFuture<?> schedule​(Runnable command, long delay, TimeUnit unit)`\
+``\
+`<V> ScheduledFuture<V> schedule​(Callable<V> callable, long delay, TimeUnit unit)`\
+``\
+`ScheduledFuture<?> scheduleAtFixedRate​(Runnable command, long initialDelay, long period, TimeUnit unit)`\
+``\
+`ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay, long delay, TimeUnit unit) // delay between the termination of one execution and the start of the next`
 
 ## `Executor`
 
@@ -93,13 +93,13 @@ ScheduledFuture<?> scheduleWithFixedDelay​(Runnable command, long initialDelay
 
 `void unlock()` - releases the lock / decreases locks counter.
 
-`boolean tryLock()` - asynchronously tries to lock and returns `true` \(plus increments the counter\) if the lock is acquired, or `false` if not.
+`boolean tryLock()` - asynchronously tries to lock and returns `true` (plus increments the counter) if the lock is acquired, or `false` if not.
 
 ## `CyclicBarrier`
 
 Allows to sync threads at a single point. The following will be executed in 2 seconds:
 
-```text
+```
 CyclicBarrier cyclicBarrier = new CyclicBarrier(3);
 
 System.out.println(System.currentTimeMillis());
@@ -123,7 +123,7 @@ The execution will not stop if the required number of `await` calls were perform
 
 ## Deadlock
 
-```text
+```
 package common;
 
 public class Deadlock {
@@ -171,4 +171,3 @@ public class Deadlock {
 }
 
 ```
-
