@@ -10,3 +10,10 @@ kubectl get pod \
   --all-namespaces
 ```
 
+## PV / PVC
+
+Cleanup PV ownership:
+
+```
+kubectl patch pv pg-volume -p '{"spec":{"claimRef": null}}'
+```
