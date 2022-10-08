@@ -17,3 +17,9 @@ Cleanup PV ownership:
 ```
 kubectl patch pv pg-volume -p '{"spec":{"claimRef": null}}'
 ```
+
+## Random Secret
+
+```
+head /dev/urandom | tr -dc A-Za-z0-9 | head -c 16 | xargs -I {} kubectl create secret generic redis-password --from-literal=password={}
+```
